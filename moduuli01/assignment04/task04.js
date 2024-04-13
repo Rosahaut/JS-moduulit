@@ -22,4 +22,4 @@ switch (selector) {
 }
 
 const outputText = `${name}, you are ${house}!`;
-document.querySelector('#target').innerHTML = outputText;
+document.getElementById('sorting').textContent = outputText;

@@ -16,6 +16,6 @@ for (let i = 0; i < replays; i++) {
 
 const odds = successRate / replays * 100;
 
-document.querySelector(
-    '#target').innerHTML = `Probability to get sum ${targetSum} with ${diceCount} dice is ${odds.toFixed(
+document.getElementById(
+    'result').innerText = `Probability to get sum ${targetSum} with ${diceCount} dice is ${odds.toFixed(
     2)}%.`;

@@ -1,3 +1,3 @@
 'use strict';
-const name = prompt('Enter your name.');
-document.querySelector('#target').innerHTML = 'Hello, ' + name + '!';
+const name = prompt('Syötä nimesi.');
+document.write('Hello, ' + name + '!');
