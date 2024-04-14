@@ -9,12 +9,6 @@ async function getter(url, arg) {
   return await response.json();
 }
 
-document.querySelector('dialog span').addEventListener('click', function() {
-  dialog.style.pointerEvents = 'none';
-  dialog.close();
-  dialogFrame.setAttribute('src', '');
-});
-
 async function maker(arg) {
   const data = await getter(tvMaze, arg);
   for (let show of data) {
@@ -46,12 +40,9 @@ async function maker(arg) {
 
     article.insertAdjacentHTML('beforeend', show['show']['summary']);
 
-    const link = document.createElement('button');
-    link.addEventListener('click', function() {
-      dialogFrame.setAttribute('src', show['show']['url']);
-      dialog.style.pointerEvents = 'all';
-      dialog.showModal();
-    });
+    const link = document.createElement('a');
+    link.setAttribute('href', show['show']['url']);
+    link.setAttribute('target', '_blank');
     link.innerText = 'Learn more';
     article.appendChild(link);
 
